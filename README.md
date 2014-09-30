@@ -1,4 +1,4 @@
-angular-imgcache
+angular-imgcache.js
 ================
 
 Simple [imgcache.js](https://github.com/chrisben/imgcache.js) wrapper for AngularJS, can be user with Ionic/Cordova/Phonegap.
@@ -8,7 +8,7 @@ Simple [imgcache.js](https://github.com/chrisben/imgcache.js) wrapper for Angula
 Install via bower
 
 ```sh
-bower install --save https://github.com/jBenes/angular-imgcache.git#master
+bower install --save angular-imgcache.js
 ```
 
 Link library and dependencies
@@ -16,7 +16,7 @@ Link library and dependencies
 ```html
 <script src="bower_compoents/angular/angular.js"></script>
 <script src="bower_compoents/imgcache.js/js/imgcache.js"></script>
-<script src="bower_compoents/angular-imgcache/angular-imgcache.js"></script>
+<script src="bower_compoents/angular-imgcache.js/angular-imgcache.js"></script>
 ```
 
 Load module
@@ -85,7 +85,7 @@ Access imgcache.js and its original methods in your components via promise to ma
 
 ##### Directive
 
-Angular-imgcache comes with directive, which first looks into cache for an image. If not present, it downloads image, then stores in cache and uses it.
+Angular-imgcache.js comes with directive, which first looks into cache for an image. If not present, it downloads image, then stores in cache and uses it.
 
 We can set src of an image with `ic-src` attribute.
 
@@ -96,5 +96,5 @@ We can set src of an image with `ic-src` attribute.
 Or set elements `background-image` with `ic-bg` attribute.
 
 ```html
-<div img-cache bg-bg="{{imgUrl}}" ></div>
+<div img-cache ic-bg="{{imgUrl}}" ></div>
 ```
