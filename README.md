@@ -1,9 +1,9 @@
 angular-imgcache
 ================
 
-Simple [imgcache.js](https://github.com/chrisben/imgcache.js) wrapper for AngularJS
+Simple [imgcache.js](https://github.com/chrisben/imgcache.js) wrapper for AngularJS, can be user with Ionic/Cordova/Phonegap.
 
-## Instalation
+## Installation
 
 Install via bower
 
@@ -29,6 +29,8 @@ angular.module('MyApp', [
 
 ## Usage
 
+##### Configuration
+
 You can override imgcache.js default options in Angulars config section.
 
 ```javascript
@@ -44,10 +46,30 @@ You can override imgcache.js default options in Angulars config section.
         usePersistentCache: true
     });
 
+    // ImgCache library is initialized automatically,
+    // but set this option if you are using platform like Ionic -
+    // in this case we need init imgcache.js manually after device is ready
+    ImgCacheProvider.manualInit = true;
+
     ...
 
 });
 ```
+
+If you are using platform like Ionic, you have to init ImgCache manually.
+Note: you must set `ImgCacheProvider.manualInit = true;` as in example above.
+
+```javascript
+.run(function($ionicPlatform, ImgCache) {
+
+    $ionicPlatform.ready(function() {
+        ImgCache.$init();
+    });
+
+});
+```
+
+##### Service
 
 Access imgcache.js and its original methods in your components via promise to make sure that imgcache.js library is already initialized
 
@@ -61,6 +83,6 @@ Access imgcache.js and its original methods in your components via promise to ma
 });
 ```
 
-### TODO
+##### Directive
 
-* Directive coming soon
+Coming soon

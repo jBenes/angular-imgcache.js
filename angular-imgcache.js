@@ -2,6 +2,17 @@ angular.module('ImgCache', [])
 
 .provider('ImgCache', function() {
 
+    ImgCache.$init = function() {
+
+        ImgCache.init(function() {
+            ImgCache.$deferred.resolve();
+        }, function() {
+            ImgCache.$deferred.reject();
+        });
+    }
+
+    this.manualInit = false;
+
     this.setOptions = function(options) {
         angular.extend(ImgCache.options, options);
     }
@@ -12,15 +23,12 @@ angular.module('ImgCache', [])
 
     this.$get = ['$q', function ($q) {
 
-        var deferred = $q.defer();
+        ImgCache.$deferred = $q.defer();
+        ImgCache.$promise = ImgCache.$deferred.promise;
 
-        ImgCache.$promise = deferred.promise;
-
-        ImgCache.init(function() {
-            deferred.resolve();
-        }, function() {
-            deferred.reject();
-        });
+        if(!this.manualInit) {
+            ImgCache.$init();
+        }
 
         return ImgCache;
     }];
