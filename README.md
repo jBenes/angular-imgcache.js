@@ -14,9 +14,9 @@ bower install --save angular-imgcache.js
 Link library and dependencies
 
 ```html
-<script src="bower_compoents/angular/angular.js"></script>
-<script src="bower_compoents/imgcache.js/js/imgcache.js"></script>
-<script src="bower_compoents/angular-imgcache.js/angular-imgcache.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/imgcache.js/js/imgcache.js"></script>
+<script src="bower_components/angular-imgcache.js/angular-imgcache.js"></script>
 ```
 
 Load module
