@@ -69,6 +69,24 @@ Note: you must set `ImgCacheProvider.manualInit = true;` as in example above.
 });
 ```
 
+You can init library manually in other patforms via "deviceready" callback like this:
+
+```html
+<body onload="onLoad()">
+```
+
+```javascript
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+    ImgCache.$init();
+}
+```
+
+(Thx @emps for this note in #1)
+
 ##### Service
 
 Access imgcache.js and its original methods in your components via promise to make sure that imgcache.js library is already initialized
