@@ -1,0 +1,21 @@
+{
+  "name": "angular-imgcache.js",
+  "version": "0.1.0",
+  "description": "Simple imgcache.js wrapper for AngularJS",
+  "main": "angular-imgcache.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jBenes/angular-imgcache.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "imgcache.js",
+    "JavaScript"
+  ],
+  "author": "Benes <benes@kodarna.cz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jBenes/angular-imgcache/issues"
+  },
+  "homepage": "https://github.com/jBenes/angular-imgcache#readme"
+}
