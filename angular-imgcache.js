@@ -68,6 +68,16 @@ angular.module('ImgCache', [])
                         } else {
                             ImgCache.cacheFile(src, function() {
                                 setImg(type, el, src);
+                            },function() {
+                                // fallback to original source if e.g. src is a relative file and therefore loaded from file system
+                                if(src)
+                                {
+                                    if(type === 'bg') {
+                                        el.css({'background-image': 'url(' + src + ')' });
+                                    } else {
+                                        el.attr('src', src);
+                                    }
+                                }
                             });
                         }
 
