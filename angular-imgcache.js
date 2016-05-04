@@ -39,10 +39,6 @@ angular.module('ImgCache', [])
 
     return {
         restrict: 'A',
-        scope: {
-            icBg: '@',
-            icSrc: '@'
-        },
         link: function(scope, el, attrs) {
 
             var setImg = function(type, el, src) {
