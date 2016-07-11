@@ -9,17 +9,17 @@ angular.module('ImgCache', [])
         }, function() {
             ImgCache.$deferred.reject();
         });
-    }
+    };
 
     this.manualInit = false;
 
     this.setOptions = function(options) {
         angular.extend(ImgCache.options, options);
-    }
+    };
 
     this.setOption = function(name, value) {
         ImgCache.options[name] = value;
-    }
+    };
 
     this.$get = ['$q', function ($q) {
 
@@ -55,7 +55,7 @@ angular.module('ImgCache', [])
                         el.attr('src', img_src);
                     }
                 });
-            }
+            };
 
             var loadImg = function(type, el, src) {
 
@@ -73,7 +73,7 @@ angular.module('ImgCache', [])
 
                     });
                 });
-            }
+            };
 
             attrs.$observe('icSrc', function(src) {
 
